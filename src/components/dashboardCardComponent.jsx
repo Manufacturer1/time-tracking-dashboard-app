@@ -4,7 +4,7 @@ const DashBoardCard = ({backgroundIcon,type,hrs,time,backgroundColor,iconPositio
     
     const checkNumberOfHours = (hrs) =>{
         let hours = `${hrs}hrs`;
-        (hrs >= 5) ? 
+        (hrs > 1) ? 
         hours = `${hrs}hrs` :
         hours = `${hrs}hr`;
         
