@@ -2,9 +2,8 @@ import React from "react";
 import profileImage from '../images/image-jeremy.png';
 
 
-const Report = () =>{
-    const dateLabels = ['Daily','Weekly','Monthly'];
-
+const Report = ({dateLabels,onChangeTimeFrame,timeFrame}) =>{
+   
     return(
         <div className="bg-neutral-darkBlue rounded-xl">
             <div className="flex items-center gap-4 w-full md:block max-h-[70%] bg-primary-blue rounded-xl p-6 ">
@@ -20,7 +19,7 @@ const Report = () =>{
                 {
                     dateLabels.map((label,index) =>{
                         return(
-                            <li className="cursor-pointer hover:text-white transform-color duration-300" key={index}>{label}</li>      
+                            <li onClick={() => onChangeTimeFrame(index)} className={`${timeFrame === index ? 'text-white' : ''} cursor-pointer hover:text-white transform-color duration-300`} key={index}>{label}</li>      
                         );
                     })
                 }

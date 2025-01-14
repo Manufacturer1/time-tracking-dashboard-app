@@ -1,8 +1,16 @@
 import React from "react";
-import iconEllipsis from '../images/icon-ellipsis.svg';
 
-const DashBoardCard = ({backgroundIcon,type,hrs,time,backgroundColor,iconPosition}) =>{
+const DashBoardCard = ({backgroundIcon,type,hrs,time,backgroundColor,iconPosition,timeFrameIndex,cardDataLabels}) =>{
     
+    const checkNumberOfHours = (hrs) =>{
+        let hours = `${hrs}hrs`;
+        (hrs >= 5) ? 
+        hours = `${hrs}hrs` :
+        hours = `${hrs}hr`;
+        
+        return hours;
+    }
+
     return(
         <div className="relative rounded-xl flex flex-col">
             <div className={`${backgroundColor} rounded-t-xl pr-3 h-14 overflow-hidden mb-[-1em]`}>
@@ -23,9 +31,12 @@ const DashBoardCard = ({backgroundIcon,type,hrs,time,backgroundColor,iconPositio
                 </div>
                 </div>
                 <div className="flex items-center justify-between md:block">
-                    <h1 className="text-4xl md:text-5xl font-extralight mb-2">  {hrs}hrs
+                    <h1 className="text-4xl md:text-5xl font-extralight mb-2">  {
+                        checkNumberOfHours(hrs)
+                    }
                     </h1>
-                    <p className="text-sm md:text-xs text-neutral-dessaturatedBlue">Last Week - {time}hrs</p>
+                    <p className="text-sm md:text-xs text-neutral-dessaturatedBlue">Last {cardDataLabels[timeFrameIndex]} - 
+                        {checkNumberOfHours(time)}</p>
                 </div>
             </div>
         </div>
