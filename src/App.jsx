@@ -16,15 +16,15 @@ function App() {
 
   return (
     <>
-      <div className="grid px-[19rem] place-content-center grid-cols-4 grid-rows-2 text-white gap-5">
-        <div className="grid grid-rows-1 grid-cols-1 row-span-2">
+      <div className="grid grid-cols-1 grid-rows-1 w-[100%] p-5 place-content-center md:grid-cols-[repeat(4,13rem)] md:grid-rows-2 text-white gap-5">
+        <div className="grid md:grid-rows-1 md:grid-cols-1 md:row-span-2">
             <Report/>
         </div>
         {
           cardInfo.map((card,index) =>{
               return(
 
-                <div className="grid" key={index}>
+              <div className="grid" key={index}>
                 <DashBoardCard 
                 backgroundIcon={card.icon} 
                 type={card.title} 

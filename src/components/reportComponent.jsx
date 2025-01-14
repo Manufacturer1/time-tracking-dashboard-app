@@ -1,21 +1,29 @@
 import React from "react";
 import profileImage from '../images/image-jeremy.png';
 
+
 const Report = () =>{
-    
+    const dateLabels = ['Daily','Weekly','Monthly'];
+
     return(
         <div className="bg-neutral-darkBlue rounded-xl">
-            <div className="w-full max-h-[70%] bg-primary-blue rounded-xl p-6 ">
+            <div className="flex items-center gap-4 w-full md:block max-h-[70%] bg-primary-blue rounded-xl p-6 ">
                 <div className="w-16 mb-6 border-white border-2 rounded-full">
                     <img className="block w-full h-full object-cover" src={profileImage} alt="Profile dashboard icon" />
                 </div>
-                <p className="text-sm text-neutral-paleBlue opacity-80 mb-1">Report for</p>
-                <h1 className="text-4xl text-white font-extralight tracking-wide mb-7">Jeremy <br/> Robson</h1>
+                <div>
+                    <p className="text-sm text-neutral-paleBlue opacity-80 md:mb-1">Report for</p>
+                    <h1 className="text-2xl md:text-4xl text-white font-extralight tracking-wide mb-7">Jeremy <br className="hidden md:block"/> Robson</h1>
+                </div>
             </div>
-            <ul className="p-6 space-y-3 text-sm text-neutral-dessaturatedBlue">
-                <li>Daily</li>
-                <li>Weekly</li>
-                <li>Monthly</li>
+            <ul className="flex items-center justify-between md:block md:space-y-3 p-6 text-sm text-neutral-dessaturatedBlue">
+                {
+                    dateLabels.map((label,index) =>{
+                        return(
+                            <li className="cursor-pointer hover:text-white transform-color duration-300" key={index}>{label}</li>      
+                        );
+                    })
+                }
             </ul>
         </div>
     );
