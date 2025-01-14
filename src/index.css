@@ -9,8 +9,8 @@
 body {
   font-family: "Rubik", serif;
   background-color: hsl(226, 43%, 10%);
-  display: flex;
-  place-items: center;
   min-height: 100vh;
+  display: grid;
+  align-content: center;
 }
 

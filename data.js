@@ -1,6 +1,14 @@
-[
+import iconWork from './src/images/icon-work.svg';
+import iconPlay from './src/images/icon-play.svg';
+import iconSelfCare from './src/images/icon-self-care.svg';
+import iconSocial from './src/images/icon-social.svg';
+import iconStudy from './src/images/icon-study.svg';
+import iconExercise from './src/images/icon-exercise.svg';
+
+const cardInfo = [
   {
     "title": "Work",
+    'icon': iconWork,
     "timeframes": {
       "daily": {
         "current": 5,
@@ -18,6 +26,7 @@
   },
   {
     "title": "Play",
+    'icon': iconPlay,
     "timeframes": {
       "daily": {
         "current": 1,
@@ -35,6 +44,7 @@
   },
   {
     "title": "Study",
+    'icon': iconStudy,
     "timeframes": {
       "daily": {
         "current": 0,
@@ -52,6 +62,7 @@
   },
   {
     "title": "Exercise",
+    'icon': iconExercise,
     "timeframes": {
       "daily": {
         "current": 1,
@@ -69,6 +80,7 @@
   },
   {
     "title": "Social",
+    'icon': iconSocial,
     "timeframes": {
       "daily": {
         "current": 1,
@@ -86,6 +98,7 @@
   },
   {
     "title": "Self Care",
+    'icon': iconSelfCare,
     "timeframes": {
       "daily": {
         "current": 0,
@@ -102,3 +115,5 @@
     }
   }
 ]
+
+export default cardInfo;
